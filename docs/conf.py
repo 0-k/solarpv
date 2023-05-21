@@ -11,7 +11,7 @@ sys.path.insert(0, os.path.abspath('..'))
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'pytemplate'
+project = 'solarpv'
 copyright = '2022, Martin Klein'
 author = 'Martin Klein'
 release = '0.1'

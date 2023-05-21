@@ -110,11 +110,11 @@ ENV/
 env.bak/
 venv.bak/
 
-# Spyder pytemplate settings
+# Spyder solarpv settings
 .spyderproject
 .spyproject
 
-# Rope pytemplate settings
+# Rope solarpv settings
 .ropeproject
 
 # mkdocs documentation
