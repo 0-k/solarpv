@@ -15,15 +15,15 @@ def request_solar_data(params):
 
 if __name__ == "__main__":
     parameters = {
-        "lat": 34.125,
-        "lon": 39.814,
+        "lat": 50.125,
+        "lon": 8.814,
         "date_from": "2019-01-01",
         "date_to": "2019-12-31",
         "dataset": "merra2",
         "capacity": 1.0,
         "system_loss": 0.1,
         "tracking": 0,
-        "tilt": 35,
+        "tilt": 5,
         "azim": 180,
         "format": "json",
     }
