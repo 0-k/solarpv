@@ -1,31 +1,20 @@
 import json
+from dataclasses import asdict
 
 import pandas as pd
 import requests
+from parameters import Technical
 
 
-def request_solar_data(params):
+def request_solar_data(technical: Technical):
     api_base = "https://www.renewables.ninja/api/"
     session = requests.session()
     url = api_base + "data/pv"
-    response = session.get(url, params=params)
+    response = session.get(url, params=asdict(technical))
     parsed_response = json.loads(response.text)
     return pd.read_json(json.dumps(parsed_response["data"]), orient="index").squeeze()
 
 
 if __name__ == "__main__":
-    parameters = {
-        "lat": 50.125,
-        "lon": 8.814,
-        "date_from": "2019-01-01",
-        "date_to": "2019-12-31",
-        "dataset": "merra2",
-        "capacity": 1.0,
-        "system_loss": 0.1,
-        "tracking": 0,
-        "tilt": 5,
-        "azim": 180,
-        "format": "json",
-    }
+    parameters = Technical(lat=50.125, lon=8.814, capacity=1.0, tilt=5, azim=180)
     data = request_solar_data(parameters)
-    print(data)
